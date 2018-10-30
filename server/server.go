@@ -14,18 +14,24 @@ import (
 	"google.golang.org/grpc"
 )
 
+//定義 listen port
 const (
 	port = ":50051"
 )
 
+//log輸出
 var (
 	out     = os.Stdout
 	buf     bytes.Buffer
 	logger  = log.New(&buf, "", log.Lmicroseconds)
+	logger.SetOutput(out)
 	logInfo = func(info string) {
-		logger.SetOutput(out)
 		logger.SetPrefix("INFO:")
 		logger.Output(2, info)
+	}
+	logDebug = func(debug string)  {
+		logger.SetPrefix("DEBUG:")
+		logger.Output(2, debug)
 	}
 )
 
