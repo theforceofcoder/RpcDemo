@@ -37,7 +37,7 @@ macOS Mojave 10.14
 [conda管理環境](https://conda.io/docs/user-guide/tasks/manage-environments.html)  
 
 1. 安裝gRPC for Python
-  * pip install grpcio
+  * conda install grpcio
 1. 安裝gRPC tool，過程中會自動安裝相依package，也會連帶安裝protobuf
   * pip install grpcio-tools googleapis-common-protos
   * conda安裝方式可以去 [Anaconda](https://anaconda.org/)搜尋相對應作業系統的package，一樣是搜尋grpcio-tools

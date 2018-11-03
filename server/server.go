@@ -21,15 +21,17 @@ const (
 
 //log輸出
 var (
-	out     = os.Stdout
-	buf     bytes.Buffer
-	logger  = log.New(&buf, "", log.Lmicroseconds)
-	logger.SetOutput(out)
+	out    = os.Stdout
+	buf    bytes.Buffer
+	logger = log.New(&buf, "", log.Lmicroseconds)
+
 	logInfo = func(info string) {
+		logger.SetOutput(out)
 		logger.SetPrefix("INFO:")
 		logger.Output(2, info)
 	}
-	logDebug = func(debug string)  {
+	logDebug = func(debug string) {
+		logger.SetOutput(out)
 		logger.SetPrefix("DEBUG:")
 		logger.Output(2, debug)
 	}
